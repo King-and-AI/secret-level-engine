@@ -19,5 +19,5 @@ if cue:
         if op == 'equal':
             for j in range(a1 - a0):
                 k = int(exp[a0 + j][1][1]); t = heard[b0 + j][1]
-                if not (B[k] - 0.05 <= t <= B[k + 1]):
+                if not (B[k] - 0.5 <= t <= B[k + 1]):  # Whisper often stamps a first word up to ~0.4 s early after a pause
                     print(f"  word '{exp[a0+j][0]}' of {exp[a0+j][1]} heard at {t:.2f} s, outside its scene {B[k]:.2f}-{B[k+1]:.2f}")
