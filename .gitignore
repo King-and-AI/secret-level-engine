@@ -1,0 +1,11 @@
+# secrets
+.env
+# generated media and working files
+*.mp4
+*.wav
+*.mp3
+voice*/
+stills/
+qa*/
+__pycache__/
+engine/cues.json
