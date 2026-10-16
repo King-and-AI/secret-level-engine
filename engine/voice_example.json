@@ -1,0 +1,15 @@
+{
+ "voice_name": "Liam (ElevenLabs premade voice)",
+ "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+ "model_id": "eleven_multilingual_v2",
+ "output_format": "mp3_44100_128",
+ "stability": 0.38,
+ "similarity_boost": 0.8,
+ "style": 0.45,
+ "use_speaker_boost": true,
+ "speed": 1.15,
+ "tempo": 1.06,
+ "fast_tempo": 1.09,
+ "fast_lines": ["L1", "L3", "L4"],
+ "loudness_lufs": -14
+}

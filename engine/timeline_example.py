@@ -1,6 +1,6 @@
 """Worked example (voiced path): place each spoken phrase on the timeline and derive every visual cue from word timings.
 For a new video, copy this file and rewrite the place(...) calls for your own lines; keep the cue names.
-Run: TEMPO_PER={"L1":1.09} VDIR=voice_x VTRACK=voice_track.wav CUES=cues.json python3 timeline_x.py"""
+Normally run for you by make_voiced.sh."""
 import json, os, numpy as np
 from scipy.io import wavfile
 from phrases import words
@@ -146,3 +146,7 @@ cue = {k: round(v, 3) for k, v in cue.items()}
 json.dump(cue, open(os.environ.get('CUES', 'cues.json'), 'w'), indent=1)
 print('END', cue['END'])
 for k in ['B1', 'B2', 'B3', 'B4', 'B5', 'END']: print(k, cue[k])
+# phrase list for check_voice.py
+json.dump([{'line': line, 'start': round(V[line][1][i0][1] + off, 3), 'end': round(V[line][1][i1][2] + off, 3),
+            'text': ' '.join(x[0] for x in V[line][1][i0:i1 + 1])} for off, line, i0, i1 in placed],
+          open(os.environ.get('PLACED', 'placed.json'), 'w'), indent=1)

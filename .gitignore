@@ -9,3 +9,4 @@ stills/
 qa*/
 __pycache__/
 engine/cues.json
+engine/placed.json
